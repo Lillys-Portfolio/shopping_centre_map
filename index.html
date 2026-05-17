@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cwmbran Shopping Centre</title>
+
+  <!-- CSS LINK -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="kiosk" id="app">
+
+    <header>
+      <h1>Cwmbran Shopping Centre</h1>
+
+      <button class="accessibility-btn" onclick="toggleAccessibility()">
+        ♿
+      </button>
+    </header>
+
+    <!-- ACCESSIBILITY PANEL -->
+    <div class="accessibility-panel" id="accessibilityPanel">
+      <button onclick="toggleLargeText()">Toggle Large Text</button>
+      <button onclick="toggleContrast()">Toggle High Contrast</button>
+    </div>
+
+    <!-- HOME SCREEN -->
+    <div class="screen active" id="homeScreen">
+
+      <button class="menu-btn find-store"
+        onclick="showScreen('searchScreen')">
+
+        🔍 Find a Store
+      </button>
+
+      <button class="menu-btn view-map"
+        onclick="showScreen('mapScreen')">
+
+        🗺️ View Map
+      </button>
+
+      <button class="menu-btn offers">
+        💸 Offers
+      </button>
+
+      <button class="menu-btn info">
+        ℹ️ Centre Info
+      </button>
+
+    </div>
+
+    <!-- SEARCH SCREEN -->
+    <div class="screen" id="searchScreen">
+
+      <button class="back-btn"
+        onclick="showScreen('homeScreen')">
+
+        ← Back
+      </button>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for a store..."
+        onkeyup="searchStores()"
+      />
+
+      <div class="category-container">
+        <div class="category">Fashion</div>
+        <div class="category">Food</div>
+        <div class="category">Electronics</div>
+        <div class="category">Services</div>
+      </div>
+
+      <div id="storeList">
+
+        <div class="store" onclick="openMap('H&M')">
+          H&M
+        </div>
+
+        <div class="store" onclick="openMap('JD Sports')">
+          JD Sports
+        </div>
+
+        <div class="store" onclick="openMap('Costa Coffee')">
+          Costa Coffee
+        </div>
+
+        <div class="store" onclick="openMap('Next')">
+          Next
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- MAP SCREEN -->
+    <div class="screen" id="mapScreen">
+
+      <button class="back-btn"
+        onclick="showScreen('homeScreen')">
+
+        ← Back
+      </button>
+
+      <h2 id="selectedStore">Store Map</h2>
+
+      <div class="map">
+
+        <div class="you-are-here">
+          You Are Here
+        </div>
+
+        <div class="route"></div>
+
+        <div class="destination">
+          Destination
+        </div>
+
+      </div>
+
+      <div class="directions">
+
+        <h3>Directions</h3>
+
+        <p>1. Walk straight ahead</p>
+        <p>2. Turn left at the junction</p>
+        <p>3. Continue forward</p>
+        <p>4. Destination will be on your right</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT LINK -->
+  <script src="script.js"></script>
+
+</body>
+</html>
